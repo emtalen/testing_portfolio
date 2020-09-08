@@ -13,7 +13,6 @@ class ContactForm extends Component {
   }
 
   handleSubmit = (e) => {
-    debugger
     fetch("/",
      {
       method: "POST",
@@ -31,7 +30,8 @@ class ContactForm extends Component {
   render() {
     const { name, email, message } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} netlify name='contact'>
+      <form onSubmit={this.handleSubmit} netlify name="contact">
+        <input type="hidden" name="form-name" value="contact" />
         <p>
           <label>
             Your Name:{" "}
